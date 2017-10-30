@@ -6,6 +6,8 @@ PHP class to resize images using php-image-magician
 
 Resize all images from a folder 
 
+* Check for write permissions on target folder.
+
 ```
 public function resize()
     {
