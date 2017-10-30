@@ -35,13 +35,13 @@ class ImageResizer
         $create_mobile_version= false;
 
       $magicianObj = new imageLib($this->image->url);
-      $resolution  =  $this::DEFAULT_RESOLUTION[$this->image->orientation] ;
+      $resolution  =  $this::$DEFAULT_RESOLUTION[$this->image->orientation] ;
 
       $magicianObj -> resizeImage($resolution['width'],$resolution['height'],'exact');
       $magicianObj -> saveImage($this->image->url);
 
       if($create_mobile_version){
-        $resolution = $this::DEFAULT_RESOLUTION['mobile_'.$this->image->orientation] ;
+        $resolution = $this::$DEFAULT_RESOLUTION['mobile_'.$this->image->orientation] ;
         $magicianObjMobile = new imageLib($this->image->url);
         $magicianObjMobile->resizeImage($resolution['width'],$resolution['height'],$this->image->orientation);
         $mobile_file_name = str_replace('.','',basename($this->image->url,$this->image->extension));
