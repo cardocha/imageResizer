@@ -10,16 +10,16 @@ Resize all images from a folder
 
 ```
 public function resize()
-    {
-      $url = parse_url('path',PHP_URL_PATH);
-      $abs_path = $_SERVER['DOCUMENT_ROOT'] . $url;
-      $folders = array(
-        $abs_path.'images-folder/',
-      );
-      foreach ($folders as $folder) {
-        ImageResizer::batch_resize($folder);
-      }
+{
+    $url = parse_url('path',PHP_URL_PATH);
+    $abs_path = $_SERVER['DOCUMENT_ROOT'] . $url;
+    $folders = array(
+      $abs_path.'images-folder/',
+    );
+    foreach ($folders as $folder) {
+      ImageResizer::batch_resize($folder);
     }
+}
 ```
 
 ### Prerequisites
